@@ -26,13 +26,17 @@
     #enum_list.at(n - 1)
   ])
   #set rect(stroke: thin_line)
+  #show math.equation: it => [
+    #set text(..sans_font_cfg)
+    #it
+  ]
 
   #let chapter_title_interval = 24pt
 
   #show heading.where(level: 1): it => {
     if it.outlined {
       return block(above: chapter_title_interval, below: chapter_title_interval)[
-        #set text(..sans_font_cfg, size: font_size_list.at(0), weight: "medium")
+        #set text(..sans_font_cfg, size: font_size_list.at(0), weight: "medium", tracking: 0em)
         #counter(heading).display()
         #it.body
       ]
