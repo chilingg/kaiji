@@ -21,16 +21,27 @@
   #set page(margin: (x: 6em))
   #set text(..font_cfg, size: font_size_list.at(2), tracking: 0.1em)
   #set par(justify: true, leading: 0.8em)
+
   #set list(indent: 1em, marker: none)
   #set enum(indent: 1em, numbering: n => [
     #enum_list.at(n - 1)
   ])
-  #set rect(stroke: thin_line)
-  #show math.equation: it => [
-    #set text(..sans_font_cfg)
-    #it
-  ]
 
+  #set rect(stroke: thin_line)
+
+  // #show math.equation: it => [
+  //   #set text(..sans_font_cfg)
+  //   #it
+  // ]
+
+  #show figure.where(
+  kind: image,
+  ): it => box()[
+      #let n = counter(figure.where(kind: image)).at(it.location()).at(0)
+      #text(..sans_font_cfg, tracking: 0em)[⬜#(n + 500) #it.caption.body]
+      #it.body
+  ]
+  
   #let chapter_title_interval = 24pt
 
   #show heading.where(level: 1): it => {
