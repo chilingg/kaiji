@@ -8,13 +8,13 @@
 
   [
     #set page(
-      fill: color.cmyk(40%, 40%, 30%, 90%),
+      fill: color.cmyk(0%, 75%, 100%, 40%),
       margin: (top: 4cm)
     )
 
     #set text(
       weight: "extrabold",
-      fill: color.cmyk(55%, 60%, 100%, 0%)
+      fill: color.cmyk(0%, 20%, 60%, 40%)
     )
 
     #align(center)[
