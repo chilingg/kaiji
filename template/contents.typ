@@ -7,7 +7,7 @@
     ): it => {
       set text(size: font_size_list.at(1), weight: "medium")
       block(below: 0em, above: 2em)[
-        #it.body <sans_font> #h(1fr) #it.page
+        #it.body <sans_font> #h(1fr) #text(size: font_size_list.at(2), it.page)
       ]
     }
     #show outline.entry.where(

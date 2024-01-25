@@ -11,3 +11,7 @@
 
 #include "part1/chapter1.typ"
 #pagebreak()
+#include "part1/chapter2.typ"
+#pagebreak()
+#include "part1/chapter3.typ"
+#pagebreak()

@@ -1,4 +1,4 @@
-#let font_size_list = (16pt, 13pt, 9pt, 7pt);
+#let font_size_list = (16pt, 12pt, 9pt, 7pt);
 
 #let font_cfg = (
   font: "Source Han Serif",
@@ -15,24 +15,19 @@
 #let thin_line = 0.6pt
 #let normal_line = 1pt
 
-#let enum_list = ("⑴","⑵","⑶","⑷","⑸","⑹","⑺","⑻","⑼","⑽","⑾","⑿","⒀","⒁","⒂","⒃","⒄","⒅","⒆","⒇")
+#let parenthese_numbers = ("⑴","⑵","⑶","⑷","⑸","⑹","⑺","⑻","⑼","⑽","⑾","⑿","⒀","⒁","⒂","⒃","⒄","⒅","⒆","⒇")
 
 #let base_style(body) = [
   #set page(margin: (x: 6em))
   #set text(..font_cfg, size: font_size_list.at(2), tracking: 0.1em)
   #set par(justify: true, leading: 0.8em)
 
-  #set list(indent: 1em, marker: none)
-  #set enum(indent: 1em, numbering: n => [
-    #enum_list.at(n - 1)
-  ])
+  #set list(indent: 0em, marker: none)
+  #set enum(indent: 0em)
+  
+  #set line(stroke: thin_line)
 
   #set rect(stroke: thin_line)
-
-  // #show math.equation: it => [
-  //   #set text(..sans_font_cfg)
-  //   #it
-  // ]
 
   #show figure.where(
   kind: image,
@@ -42,7 +37,7 @@
       #it.body
   ]
   
-  #let chapter_title_interval = 24pt
+  #let chapter_title_interval = 32pt
 
   #show heading.where(level: 1): it => {
     if it.outlined {
